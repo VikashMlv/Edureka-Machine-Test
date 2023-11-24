@@ -1,0 +1,53 @@
+
+<h2 class="text-primary">Edureka Test</h2>
+<table class="table mt-2">
+  <thead>
+    <tr>
+      <th scope="col">Employee Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Dob</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr appColor *ngFor="let item of employeeData">
+      <td>
+        <div *ngIf="!ShowEdit">{{item.EmployeeId}}</div> <!-- if Edit Button clicked Status False -->
+        <div *ngIf="ShowEdit"><input type="text" [(ngModel)]="item.EmployeeId"></div>  <!-- if Edit Button Status true -->
+      </td>
+      <td>
+        <div *ngIf="!ShowEdit">{{item.FirstName}}</div> <!-- if Edit Button Status False -->
+        <div *ngIf="ShowEdit"><input type="text" [(ngModel)]="item.FirstName"></div> <!-- if Edit Button Status False -->
+
+      </td>
+      <td>
+        <div *ngIf="!ShowEdit">{{item.LastName}}</div> <!-- if Edit Button Status False -->
+        <div *ngIf="ShowEdit"><input type="text" [(ngModel)]="item.LastName"></div> <!-- if Edit Button Status False -->
+
+      </td>
+      <td>
+        <div *ngIf="!ShowEdit">{{item.Salary}}</div> <!-- if Edit Button Status False -->
+        <div *ngIf="ShowEdit"><input type="text" [(ngModel)]="item.Salary"></div> <!-- if Edit Button Status False -->
+
+      </td>
+      <td>
+        <div *ngIf="!ShowEdit">{{item.Dob}}</div> <!-- if Edit Button Status False -->
+        <div *ngIf="ShowEdit"><input type="text" [(ngModel)]="item.Dob"></div> <!-- if Edit Button Status False -->
+      </td>
+      <td>
+        <div *ngIf="!ShowEdit">{{item.email}}</div> <!-- if Edit Button Status False -->
+        <div *ngIf="ShowEdit"><input type="text" [(ngModel)]="item.email"></div> <!-- if Edit Button Status False -->
+      </td>
+      <td> <button *ngIf="!ShowEdit" (click)="editEmployee()" class="btn btn-primary">Edit</button> 
+           <button *ngIf="ShowEdit" (click)="updateEmployee()" class="btn btn-success">Update</button> 
+      </td>
+
+
+    </tr>
+
+
+  </tbody>
+</table>
