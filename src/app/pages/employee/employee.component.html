@@ -1,5 +1,5 @@
 
-<h2 class="text-primary">Edureka Test</h2>
+<h2 appColor class="text-primary">Edureka Test</h2>
 <table class="table mt-2">
   <thead>
     <tr>
@@ -13,8 +13,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr appColor *ngFor="let item of employeeData">
-      <td>
+    <tr   *ngFor="let item of employeeData">
+      <td appColor>
         <div *ngIf="!ShowEdit">{{item.EmployeeId}}</div> <!-- if Edit Button clicked Status False -->
         <div *ngIf="ShowEdit"><input type="text" [(ngModel)]="item.EmployeeId"></div>  <!-- if Edit Button Status true -->
       </td>

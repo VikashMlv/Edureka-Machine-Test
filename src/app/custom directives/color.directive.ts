@@ -7,19 +7,18 @@ import { Directive, HostListener, ElementRef } from '@angular/core';
 export class ColorDirective {
 
 
-  constructor(private el:ElementRef) { }
+  constructor(private element: ElementRef) { }
 
-  @HostListener("mouseover") onMouseOver(){
-    console.log("Hello");
-    this.highlight('green');
+  @HostListener("mouseover") onMouseOver() {
+    this.element.nativeElement.classList.add('bg-success')
+   console.log("success color");
+
   }
 
-  @HostListener('mouseout') onMouseOut(){
-    this.highlight('white')
+  @HostListener("mouseout") onMouseOut(){
+    this.element.nativeElement.classList.remove('bg-success')
+    console.log("remove success color");
   }
-  
-  private highlight(color:string){
-    this.el.nativeElement.style.backgroundColor = color;
-  }
+
 
 }
