@@ -1,0 +1,31 @@
+
+
+<table class="table ">
+    <thead class="">
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">city</th>
+        <th scope="col">isActive</th>
+        <th scope="col">gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of studentData">
+        <td>
+          <i *ngIf="data.gender == 'male'" class="bg-success">Male</i>
+          <i *ngIf="data.gender == 'female'" class="bg-secondary">Female</i>
+          {{data.name}}
+        </td>
+        <td>{{data.city}}</td>
+        <td>
+          <i class="text-success" *ngIf="data.isActive">Active</i>
+          <i class="text-danger" *ngIf="!data.isActive">In Active</i>
+        </td>
+        <td>{{data.gender}}</td>
+       
+      </tr>
+
+    </tbody>
+  </table>
+
+  <i class="fa-brands fa-facebook">Hii</i>

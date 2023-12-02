@@ -1,0 +1,63 @@
+<h2 class="bg-secondary text-white p-2">ngClass Example </h2>
+
+
+<div class="row mt-5">
+    <div class="col-md-8 bg-dark text-white" [ngClass]="sidePanel ? 'col-md-12' : 'col-md-8'">
+        <p>Col md-8 area </p>
+        <picture>
+            <img src="../../../assets/spring-images-min.jpg">
+        </picture>
+     <button class="bg-secondary text-white" (click)="PanelSwitch()">Open Panel</button>
+    </div>
+    <div class="col-md-4 bg-primary text-white" *ngIf="viewItem">
+        <p>Col md-4 area</p>
+        <div>
+            <picture><img src="../../../assets/card-2.jpg"></picture>
+        </div>
+        <button (click)="closePanel()">Close</button>
+
+    </div>
+</div>
+
+
+
+<!-- ngif Switching Ui Example  -->
+<button class="btn btn-primary mt-5 mb-5" (click)="switchUser=!switchUser">{{switchUser ? 'Admin Panel' : 'User panel'}}</button>
+<div *ngIf="switchUser" class="text-white bg-secondary">User Panel</div>
+<div *ngIf="!switchUser"  class="text-white bg-primary">Admin panel</div>
+
+
+
+<h2 class="bg-secondary text-white p-2 mt-5">ngStyle Example </h2>
+
+
+
+<table class="table">
+    <thead>
+        <th>color code </th>
+        <th>name<th>
+        <th>city</th>
+        <th>stream</th>
+        <th>status</th>
+     
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of studentData">
+        <td [ngStyle]="{'background-color':data.color}">
+            {{data.color}}
+        </td>
+        <td>{{data.name}}</td>
+        <td>{{data.status}}</td>
+        <td class="text-center">
+            <div class="progress">
+                <div [style.width.%]="data.status" class="prograss-bar progress-bar-striped progress-bar-animated">
+                    {{data.status}} %
+                </div>
+            </div>
+        </td>
+         <td>{{data.stream}}</td>   
+      </tr>
+    </tbody>
+  </table>
+
+ 
